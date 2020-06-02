@@ -1,0 +1,163 @@
+﻿/**table-style-white**/
+table.table-style-white {
+    border: 1px solid #1C6EA4;
+    background-color: #f9f9f9;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+    table.table-style-white td, table.table-style-white th {
+        border: 1px solid #DADADA;
+        padding: 3px 2px;
+        border: 1px solid #DADADA;
+        padding: 3px 2px;
+        font-size: 12px !important;
+        color: #252525;
+        line-height: 18px;
+    }
+
+    table.table-style-white tr:nth-child(even) {
+        background: white;
+    }
+
+    table.table-style-white thead {
+        background: #1C6EA4;
+        background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+        background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+        background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+        border-bottom: 2px solid #444444;
+    }
+
+        table.table-style-white thead th {
+            font-size: 15px;
+            font-weight: bold;
+            color: #FFFFFF;
+            border-left: 2px solid #D0E4F5;
+        }
+
+            table.table-style-white thead th:first-child {
+                border-left: none;
+            }
+
+    table.table-style-white tfoot {
+        font-size: 14px;
+        font-weight: bold;
+        color: #FFFFFF;
+        background: #D0E4F5;
+        background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+        background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+        background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+        border-top: 2px solid #444444;
+    }
+
+        table.table-style-white tfoot td {
+            font-size: 14px;
+        }
+
+        table.table-style-white tfoot .links {
+            text-align: right;
+        }
+
+            table.table-style-white tfoot .links a {
+                display: inline-block;
+                background: #1C6EA4;
+                color: #FFFFFF;
+                padding: 2px 8px;
+                border-radius: 5px;
+            }
+
+    table.table-style-white th, table.table-style-white td {
+        white-space: nowrap;
+        padding: 2px 5px;
+    }
+
+.table-style-white:not(.normal-first-row) tr:first-child {
+    background: linear-gradient(#f1f1f1,#c3c3c3);
+    color: #3f3f3f;
+}
+
+.table-style-white:not(.normal-last-row) tr:last-child {
+    background: linear-gradient(#f1f1f1,#c3c3c3);
+    color: #3f3f3f;
+}
+
+.table-style-white tr:first-child th {
+    /*border-top:none;*/
+}
+
+.table-style-white tr:last-child td {
+    /*border-bottom: none;*/
+}
+
+.table-style-white tr:hover:not(:first-child):not(:last-child):not(.no-select) td {
+    background: #4acaff;
+}
+
+.table-style-white:not(.no-select) tr:hover:not(:last-child):not(:first-child):not(.no-select) td {
+    color: white !important;
+    cursor: pointer;
+}
+
+.table-style-white:not(.no-select) tr.selected-row:not(:first-child):not(:last-child):not(.no-select) td {
+    background: #0ea3e0;
+    color: white !important;
+    cursor: pointer;
+}
+
+.table-style-white:not(.no-select) tr.selected-row:not(:first-child):not(:last-child):not(.no-select) td {
+    color: white !important;
+}
+/*.table-style-white tr.selected-row:not(:first-child):hover
+{
+   position:relative;
+}
+.table-style-white tr::after 
+{
+    opacity:0;
+    content: "Click to select the row";
+    position: absolute;
+    top: -31px;
+    padding: 4px 10px;
+    background: linear-gradient(#fff, #cecece);
+    border-radius: 5px;
+    left: 1px;
+    box-shadow: 0 0px 2px gray;
+    z-index: 99;
+    border-bottom: 1px solid gray;
+    color: black;
+    transition:all cubic-bezier(1,.07,1,-0.35) 2s;
+}*/
+
+.table-style-white tr:hover::after {
+    opacity: 1;
+}
+
+.table-style-white tr.selected-row:not(:first-child)::after {
+    transition: none;
+    opacity: 0;
+}
+
+.table-style-white *::selection {
+    background: transparent;
+}
+
+.table-style-white *::-moz-selection {
+    background: transparent;
+}
+
+.table-style-white tr:not(.no-select):hover i.fa {
+    color: white;
+}
+
+.table-style-white tr i.fa:hover {
+    color: #26a6c2;
+}
+
+.table-style-white tr:last-child td tr {
+    border: none;
+}
+/*Fixed-header*/
+.table-style-white tr:first-child th {
+    position: relative;
+}

@@ -1,0 +1,146 @@
+/*CSS For Hint On Invoice*/
+        .u-show-hint
+        {
+            position: relative;
+        }
+        .u-show-hint .hint-detail
+        {
+            font-size: 12px;
+            display: none;
+            position: absolute;
+            padding: 5px;
+            background: -webkit-linear-gradient(#d8d8d8, white);
+            background: -o-linear-gradient(#d8d8d8, white);
+            background: -moz-linear-gradient(#d8d8d8, white);
+            background: linear-gradient(#d8d8d8, white);
+            border: 1px solid silver;
+            border-radius: 6px;
+            width: 300px;
+            bottom: 100%;
+            left: 46%;
+            z-index: 9999;
+            box-shadow: 0 -2px 2px #6e6e6e;
+            width: 66%;
+            padding-top:22px;
+        }
+        .hint-detail label
+        {
+            font-size:11px;
+            margin: 0;
+        }
+        .hint-detail input
+        {
+            font-size:11px;
+            margin: 0;
+            height: 16px !important;
+            border: none;
+            background-color: transparent !important;
+        }
+        .u-show-hint .hint-detail::after
+        {
+            content: "";
+            border: 10px;
+            border-top: 7px solid silver;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            position: absolute;
+            bottom: -8px;
+            right: 45px;
+        }
+        .fa.fa-info
+        {
+            cursor:help;
+            padding: 1px 4px;
+            border-radius: 10px;
+            background: skyblue;
+            color: white;
+            font-size: 10px;
+            position: absolute;
+            right: 14px;
+            top: 11px;
+        }
+        .fa.fa-info.show-static
+        {
+            background:#87eb88;
+        }
+        .hint-heading {
+            font-size: 11px;
+            font-weight: bold;
+            position: absolute;
+            text-align: center;
+            display: block;
+            width: 100%;
+            top: 3px;
+            left: 0;
+            background: #aeaeae;
+            padding: 2px 0;
+        }
+        
+        .relative-box
+        {
+            position:relative;
+        }
+        
+        .addmoreinoutdetail:active {
+            background:red;
+        }
+        .addmoreinoutdetail:hover {
+            background: #5a7188;
+        }
+        .addmoreinoutdetail 
+        {
+            display:inline-block;
+            z-index: 9;
+            transition: all .3s;
+            position: absolute;
+            right: 0px;
+            top: 0;
+            width: 30px;
+            height: 100%;
+            background: #324150;
+            color: white;
+            cursor: pointer;
+        }
+        .h-v-center
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #addmoreinoutdetail
+        {
+            display:none;
+            width:70%;
+            min-width:300px;
+            max-width:90%;
+            z-index:99;
+            position:absolute;
+            box-shadow: 0 3px 10px #484848;
+            border: none;
+        }
+        .fadeout-box
+        {
+            display:none;
+            position:fixed;
+            z-index:99;
+            background: #0000008a;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        .close-popup
+        {
+            padding: 1px 4px;
+            border: 1px solid white;
+            border-radius: 3px;
+            height: 21px;
+            position: relative;
+            top: -3px;
+        }
+        .close-popup:hover
+        {
+            cursor:pointer;
+            background: #ff7272;
+        }

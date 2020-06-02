@@ -1,0 +1,22 @@
+.glow, .loginInputBox, .loginStyledInputBox{
+	background:#FAFAFA none repeat scroll 0 0;
+	border:1px solid #ddd;
+	font-size:14px;
+	line-height:20px;
+	padding:3px;
+	margin-left: 10;
+	margin-right: 10;
+	}
+
+.glow, .loginInputBox{    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.glow:focus {
+	box-shadow: 0 0 8px rgba(108, 196, 227, 0.5);
+	-moz-box-shadow: 0 0 8px rgba(108, 196, 227, 0.5);
+	-webkit-box-shadow: 0 0 8px rgba(108, 196, 227, 0.5);		    
+	background: none repeat scroll 0 0 #F0F8FE;
+    border-color: rgba(108, 196, 227, 0.75) !important;
+    outline: medium none;
+}

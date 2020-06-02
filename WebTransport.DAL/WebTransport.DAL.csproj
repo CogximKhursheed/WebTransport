@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BC21E85-B72B-45D7-BF9D-FBE1D915C597}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebTransport.DAL</RootNamespace>
+    <AssemblyName>WebTransport.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\..\Amit\DLL1\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessoryStockRpt.cs" />
+    <Compile Include="AccountBookDAL.cs" />
+    <Compile Include="AcntHeadMaintenaceDAL.cs" />
+    <Compile Include="AcntLinkDAL.cs" />
+    <Compile Include="AcntSubGrpMasterDAL.cs" />
+    <Compile Include="AdvBookGRDAL.cs" />
+    <Compile Include="AdvBookGRRetDAL.cs" />
+    <Compile Include="AnnexureReportDAL.cs" />
+    <Compile Include="BankReConciliationDAL.cs" />
+    <Compile Include="BindDropdownDAL.cs" />
+    <Compile Include="CategoryMasterDAL.cs" />
+    <Compile Include="challanAmntpaymentDAL.cs" />
+    <Compile Include="ChallanConfirmationDAL.cs" />
+    <Compile Include="ChallanDelverdDAL.cs" />
+    <Compile Include="ChlnBookingCrsngDAL.cs" />
+    <Compile Include="ChlnBookingDAL.cs" />
+    <Compile Include="ChlnConfirmationRepDAL.cs" />
+    <Compile Include="CityMastDAL.cs" />
+    <Compile Include="ClaimFrmDAL.cs" />
+    <Compile Include="ClaimToDAL.cs" />
+    <Compile Include="clsAccountPosting.cs" />
+    <Compile Include="CommissionMasterDAL.cs" />
+    <Compile Include="CompanyMastDAL.cs" />
+    <Compile Include="ConsolidatedTripRptDAL.cs" />
+    <Compile Include="ContainerSizeMasterDAL.cs" />
+    <Compile Include="ContainerTypeMasterDAL.cs" />
+    <Compile Include="CostCategorySumryDAL.cs" />
+    <Compile Include="CostLedgerDAL.cs" />
+    <Compile Include="CurrentStockRpt.cs" />
+    <Compile Include="CustomTripSheetDAL.cs" />
+    <Compile Include="DailyReportDAL.cs" />
+    <Compile Include="DayBookReportDAL.cs" />
+    <Compile Include="DeliveryChallanDetailsDAL.cs" />
+    <Compile Include="DesignationMasterDAL.cs" />
+    <Compile Include="DesigRightsDAL.cs" />
+    <Compile Include="DispatchRegDAL.cs" />
+    <Compile Include="DistanceMastDAL.cs" />
+    <Compile Include="DistrictMastDAL.cs" />
+    <Compile Include="DocumentDAL.cs" />
+    <Compile Include="DriverLogDAL.cs" />
+    <Compile Include="DriverMastDAL.cs" />
+    <Compile Include="DueAlignRepDAL.cs" />
+    <Compile Include="EditProfileDal.cs" />
+    <Compile Include="EmployeeMasterDAL.cs" />
+    <Compile Include="EmployeeSalaryDAL.cs" />
+    <Compile Include="EncryptDecryptPass.cs" />
+    <Compile Include="ExcelFormatDAL.cs" />
+    <Compile Include="FinYearDAL.cs" />
+    <Compile Include="FleetAcntLinkDAL.cs" />
+    <Compile Include="ForgotPasswordDAL.cs" />
+    <Compile Include="FreightMemoDAL.cs" />
+    <Compile Include="FuelRateMasterDAL.cs" />
+    <Compile Include="FuelSlipDAL.cs" />
+    <Compile Include="GradeMasterDAL.cs" />
+    <Compile Include="GRPrepDAL.cs" />
+    <Compile Include="GrPrepOntohireDAL.cs" />
+    <Compile Include="GRPrepRetailerDAL.cs" />
+    <Compile Include="GRRepDAL.cs" />
+    <Compile Include="GRRetailerRepDAL.cs" />
+    <Compile Include="GSTRegisterDAL.cs" />
+    <Compile Include="HireInvDAL.cs" />
+    <Compile Include="InvoiceDAL.cs" />
+    <Compile Include="InvoiceDetailsDAL.cs" />
+    <Compile Include="InvoiceRepDAL.cs" />
+    <Compile Include="InvoiceRepOTHDAL.cs" />
+    <Compile Include="ItemMasterDAL.cs" />
+    <Compile Include="ItemMastPurDAL.cs" />
+    <Compile Include="ItmGrpMasterDAL.cs" />
+    <Compile Include="LaneMasterDAL.cs" />
+    <Compile Include="LedgerAccountDAL.cs" />
+    <Compile Include="LoginDAL.cs" />
+    <Compile Include="LorryHireDAL.cs" />
+    <Compile Include="LorryMasterDAL.cs" />
+    <Compile Include="LorryMasterRepDAL.cs" />
+    <Compile Include="LostAlignRepDAL.cs" />
+    <Compile Include="LowRateMastDAL.cs" />
+    <Compile Include="ManualTripSheetDAL.cs" />
+    <Compile Include="MaterialDAL.cs" />
+    <Compile Include="MaterialIssueAgnClaimDAL.cs" />
+    <Compile Include="MiscDAL.cs" />
+    <Compile Include="MissingDocsDAL.cs" />
+    <Compile Include="MonthWiseTripRptDAL.cs" />
+    <Compile Include="MultipleDBDAL.cs" />
+    <Compile Include="NarrationMastDAL.cs" />
+    <Compile Include="OpenAccDAL.cs" />
+    <Compile Include="OpenTyreDAL.cs" />
+    <Compile Include="outsndngBillRepDAL.cs" />
+    <Compile Include="PaymentRecDAL.cs" />
+    <Compile Include="PaymentToOwnDAL.cs" />
+    <Compile Include="PendGrForInvDAL.cs" />
+    <Compile Include="PetrolCompanyMasterDAL.cs" />
+    <Compile Include="PetrolPumpMasterDAL.cs" />
+    <Compile Include="PositionMastDAL.cs" />
+    <Compile Include="ProfitLossBookDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PrtyDetlDAL.cs" />
+    <Compile Include="PurchaseBillDAL.cs" />
+    <Compile Include="QuotationDAL.cs" />
+    <Compile Include="RateMasterDAL.cs" />
+    <Compile Include="RateMasterRetailerDAL.cs" />
+    <Compile Include="RateMastFTDAL.cs" />
+    <Compile Include="RcvdAmntAgnstGRDAL.cs" />
+    <Compile Include="RcvdAmntAgnstHireInvcDAL.cs" />
+    <Compile Include="RcvdAmntAgnstInvcDAL.cs" />
+    <Compile Include="ReceiptGoodsReceivedDAL.cs" />
+    <Compile Include="RegisterDAL.cs" />
+    <Compile Include="RunningStockReportDAL.cs" />
+    <Compile Include="SaleBillDAL.cs" />
+    <Compile Include="SaleRegDAL.cs" />
+    <Compile Include="ShortageRepDAL.cs" />
+    <Compile Include="StockTransferDAL.cs" />
+    <Compile Include="SummaryRegisterDAL.cs" />
+    <Compile Include="TaxMastDAL.cs" />
+    <Compile Include="TdsReportDAL.cs" />
+    <Compile Include="TitleMasterDAL.cs" />
+    <Compile Include="TollMastDAL.cs" />
+    <Compile Include="TrackingDAL.cs" />
+    <Compile Include="TripEntryDAL.cs" />
+    <Compile Include="TripEntryOwnTohireDAL.cs" />
+    <Compile Include="TruckwiseRepDAL.cs" />
+    <Compile Include="TyreIssueDAL.cs" />
+    <Compile Include="TyreMastDAL.cs" />
+    <Compile Include="TyreMoveRpt.cs" />
+    <Compile Include="TyreSizeDAL.cs" />
+    <Compile Include="TyreStockRpt.cs" />
+    <Compile Include="UOMMasterDAL.cs" />
+    <Compile Include="UpdateGrDetailDAL.cs" />
+    <Compile Include="UserDefaultDAL.cs" />
+    <Compile Include="UserPrefenceDAL.cs" />
+    <Compile Include="UserRightsDAL.cs" />
+    <Compile Include="VchrEntryDAL.cs" />
+    <Compile Include="VechDetlClmPrtyDAL.cs" />
+    <Compile Include="WebTransport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebTransport.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WhatsNewDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="WebTransport.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WebTransport.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

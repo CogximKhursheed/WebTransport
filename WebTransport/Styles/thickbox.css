@@ -1,0 +1,648 @@
+/* http://jquery.com/demo/thickbox/----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> global settings needed for thickbox <<<-----------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+*{padding: 0; margin: 0;}
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox specific link and font settings <<<------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_window {
+  font: 12px Arial, Helvetica, sans-serif;
+  color: #333333;
+}
+#TB_secondLine {
+  font: 10px Arial, Helvetica, sans-serif;
+  color:#666666;
+}
+#TB_window a:link {color: #ffffff;}
+#TB_window a:visited {color: #ffffff;}
+#TB_window a:hover {color: #ffffff;}
+#TB_window a:active {color: #ffffff;}
+#TB_window a:focus{color: #ffffff;}
+/* ----------------------------------------------------------------------------------------------------------------*/
+/* ---------->>> thickbox settings <<<-----------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------------------------------------------------------*/
+#TB_overlay {
+  position: fixed;
+  z-index:100;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+}
+.TB_overlayMacFFBGHack {background: url(macFFBgHack.png) repeat;}
+.TB_overlayBG {
+  background-color:#000;
+  filter:alpha(opacity=20);
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+}
+* html #TB_overlay { /* ie6 hack */
+     position: absolute;
+     height:expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+#TB_window {
+  position: fixed;
+  background: #ffffff;
+  z-index: 102;
+  color:#000000;
+  display:none;
+  border: 2px solid #974478;
+  text-align:left;
+  top:50%;
+  left:50%;
+}
+* html #TB_window { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+#TB_window img#TB_Image {
+  display:block;
+  margin: 15px 0 0 15px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #666;
+  border-left: 1px solid #666;
+}
+#TB_caption{
+  height:25px;
+  padding:7px 30px 10px 25px;
+  float:left;
+}
+#TB_closeWindow{
+  height:25px;
+  padding:11px 25px 10px 0;
+  float:right;
+}
+#TB_closeAjaxWindow{
+  padding:7px 10px 5px 0;
+  margin-bottom:1px;
+  text-align:right;
+  float:right;
+}
+#TB_ajaxWindowTitle{
+  float:left;
+  padding:7px 0 5px 10px;
+  margin-bottom:1px;
+}
+#TB_title{
+  background-color:#974478;
+  height:27px;
+  color:#ffffff;
+}
+#TB_ajaxContent{
+  clear:both;
+  padding:2px 15px 15px 15px;
+  overflow:auto;
+  text-align:left;
+  line-height:1.4em;
+}
+#TB_ajaxContent.TB_modal{
+  padding:15px;
+}
+#TB_ajaxContent p{
+  padding:5px 0px 5px 0px;
+}
+#TB_load{
+  position: fixed;
+  display:none;
+  height:13px;
+  width:208px;
+  z-index:200;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+* html #TB_load { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+#TB_HideSelect{
+  z-index:99;
+  position:fixed;
+  top: 0;
+  left: 0;
+  background-color:#fff;
+  border:none;
+  filter:alpha(opacity=0);
+  -moz-opacity: 0;
+  opacity: 0;
+  height:100%;
+  width:100%;
+}
+* html #TB_HideSelect { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+#TB_iframeContent{
+  clear:both;
+  border:none;
+  margin-bottom:-1px;
+  margin-top:1px;
+  _margin-bottom:1px;
+}
+
+
+
+
+
+/* vdvxcvxcvxcvxc*/ 
+
+.bodyMainHeader {
+	font: bold 15px/16px verdana, arial, geneva;
+	color:#d96913; 
+	text-transform: uppercase;
+}
+.bodySubHeader {
+	font: bold 12px/14px verdana, arial, geneva;
+	color: #2c2c2c;
+}
+.bodySubSubHeader {
+	font: bold 11px/13px verdana, arial, geneva;
+	color: #2c2c2c;
+}
+a.bodySubSubHeader {
+	font: bold 11px/13px verdana, arial, geneva;
+	color: #d96913;
+	text-decoration: underline;
+}
+a.bodySubSubHeader:link{color: #d96913;}
+a.bodySubSubHeader:hover{color: #2c2c2c;}
+a.bodySubSubHeader:visited{color: #d96913;}
+a.bodySubSubHeader:active{color: #d96913;}
+
+/*these are used in the universal login pages since those pages use iModal.js*/
+.modalError {
+	font: bold 11px/13px verdana, arial, geneva;
+	color: #d96913;
+	border:2px dashed #d96913;
+	padding: 3px;
+	float: left;
+}
+.modalErrorFull {
+	border:2px dashed #d96913;
+	padding: 3px;
+	float: left;
+	width: 97%;
+	height: 90%;
+	position: absolute;
+}
+.modalErrorBody {
+	font: bold 11px/13px verdana, arial, geneva;
+	color: #d96913;
+}
+
+.modalSuccess {
+	font: bold 11px/13px verdana, arial, geneva;
+	color: #75930a;
+	border:2px dashed #a2c32b;
+	padding: 3px;
+	float: left;
+}
+.modalSuccessFull {
+	border: 2px dashed #a2c32b;
+	width: 99%;
+	height: 90%;
+	position: absolute;
+}
+.modalSuccessBody {
+	font: bold 14px/16px verdana, arial, geneva;
+	color: #75930a;
+}
+/*end modal*/
+
+*:focus {
+	outline: none;
+}
+
+
+#bodyWrapper {
+	min-height:100%;
+	position:relative;
+	text-align: center;
+	margin: auto;
+}
+
+#nav {
+	height:  66px;	/* height+margins */
+	position: relative;
+	text-align: center;
+}
+
+#navContainer {
+    width: 886px;
+	margin: auto;
+	position: relative;
+    text-align: left;
+    padding-top:11px;
+}
+
+#navLeft {
+    width: 702px;
+    height: 55px;
+    text-align: left;
+    background: #838383;
+}
+
+#navRight {
+    left: 709px;
+    top: 13px;
+    width: 175px;
+    height: 51px;
+	position: absolute;
+    background-image: url(/Images/hotcakeslogo.png);
+    background-repeat: no-repeat;
+    cursor:pointer;
+}
+
+#bodyContainer {
+    width: 886px;
+    margin: auto;
+    padding-bottom: 71px;
+    margin-top:11px;
+    text-align: left;
+}
+
+#subNav {
+    width: 487px;
+    /*height: 104px;*/
+}
+
+
+#panelNav {
+    width: 268px;
+    /*left is by JS*/
+	top:75px;
+	position: absolute;
+	z-index: 1000;
+	padding:0 10 10 10;
+}
+
+.openShopListTab {
+	width: 268px;
+	height: 52px;
+	background: url(Images/openShopListTab.png);
+	cursor:pointer;
+}
+.panelNavHighlight{
+	border: 6px solid #ffffff;
+}
+#shopListTC {
+	width: 100px;
+	color:#FFFFFF;
+	font: bold 10px/14px verdana, arial, geneva;
+}
+#shopListPanel {
+	background: #FFFFFf;
+	/*height: 200px; set by JS based on # items in list*/
+	/*width: 268px; set by JS */
+	
+	display: none;
+	position:static;
+	overflow:hidden;
+	/*border: 6px solid #a2c32b; set by JS - safari renders the .png as #a1c124*/
+}
+.openedShopPanel {
+	background-position: 0 -52;
+}
+
+
+
+
+/* BODY */
+#bodyContent {
+    width: 851px;
+    background: #efeeee;
+	text-align: center;
+	padding:18px;
+	position: relative;
+}
+
+#bodySearch {
+	top: -1px;	/* this is reset in JS for safari */
+	position:relative;
+	width: 657px;
+	height: 38px;
+	background: #838383;
+}
+
+#bodyCompare {
+	width: 182px;
+	height: 159px;
+	background: #97d5d2;
+}
+
+#bodyA {	/* cannot name anything w/ "Ad" in it because of Adblock Plus!!! */
+	margin-top:12px;
+	padding-top:5px;	/* required to vert center the image just enough so the rounded corners appear at top */
+	width: 178px;
+	height: 155px;
+	background: #ffffff;
+	text-align: center;
+}
+
+#bodyDisplay {
+	width: 657px;
+	background: #FFF;
+	position:relative;
+}
+/* Body listing graph and it's slider */
+#bodyListingG {
+	/*width: 657px;  -set by JS */
+	height: 237px;
+	background: #FFF;
+}
+#bodyListingGraph {
+	width: 640px;
+	height: 197px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+#bodyLGSlider {
+  /*width: 600px; - set by JS*/
+  height: 6px;
+  margin: 5px;
+  background: #BBBBBB;
+  position: relative;
+}
+#bodyLGHolder {
+	width: 890px;	/* changes based on items in that category */
+	height: 180px;
+}
+.bodyLGitem {
+	position:relative;
+	zoom:1;
+	list-style: none;
+	/*width: 70px;*/
+	height: 140px;
+	margin: 5px;
+	padding-top:20px;
+}
+.bodyLGitemP{
+	text-align:center;
+	/*background:#f0f0f0;*/
+	font: 9px/11px verdana, arial, geneva;
+}
+/* Body listing table and it's slider */
+#bodyListingS {
+	/*width: 657px;  -set by JS */
+	height: 237px;
+	background: #FFF;
+}
+#bodyListingScroll {
+	/*width: 600px; - set by JS */
+	height: 197px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+#bodyLSSlider {
+	width: 6px;
+	height: 167px;
+	margin: 5px;
+	background: #BBBBBB;
+	position: relative;
+}
+#bodyLSHolder {
+	height: 890px;	/* changes based on #items */
+	/*width: 615px; - set by JS */
+}
+
+/* Category list */
+#bodyCategories {
+	width: 172px;
+	height: 222px;
+	background: #838383;
+	position:relative;
+	overflow: hidden;
+}
+#bodyCategoriesSlider {
+  height: 172px;
+  width: 1px;
+  margin-right:10px;
+  background: #BBBBBB;
+  position: relative;
+}
+#bodyCategoriesScroll {
+	width: 170px;
+	height: 120px;
+}
+
+span.tooltip { 
+    background-image: url(/Images/transparentWhite.png);
+    background:transparent #FFFFFF no-repeat scroll 0 0; 
+    font-size:14px; 
+    height:47px; 
+    width:110px; 
+    display:none; 
+    color:#000; 
+    z-index:10000;
+    border:1px solid #e68e19;
+} 
+
+
+
+
+/* FOOTER */
+#footer {
+	height: 49px;
+	bottom: 0px;
+	left:0px;
+	width:100%;
+	text-align: center;
+	position: absolute;
+	margin-top:11px;
+	margin-bottom:11px;
+}
+
+#footerContainer {
+    background-image: url(/Images/footer.png);
+    background-repeat: no-repeat;
+    width: 886px;
+    height: 49px;
+	margin: auto;
+	position: relative;
+    text-align: right;
+}
+
+
+#footerLinks {
+	position:absolute;
+	left:530px;
+	top:10px;
+	width:340px;
+}
+
+#footerCopyright {
+	position:absolute;
+	left:694px;
+	top:27px;
+	font: 9px verdana, arial, geneva;
+}
+
+
+
+/* product detail slider classes */
+#bodyIDSlider {
+    width: 435px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bodyIDScroll {
+    height: 180px;
+    width: 435px;
+    overflow: auto;
+    overflow-x: hidden;
+    position: relative;
+    clear: left;
+}
+
+.bodyScrollC div.bodySlidePanel {
+    height: 180px;
+    width: 435px;
+	font: 11px verdana, arial, geneva;color:#333333;
+	overflow: auto; display:block;	/* these make the scroll bars if content is too big */
+}
+
+ul.bodyIDNav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 6px;
+    border-bottom:1px solid #b8b8b8;
+}
+
+ul.bodyIDNav li {
+    display: inline;
+    margin-right: 3px;
+}
+
+ul.bodyIDNav a {
+    padding: 8px;
+    font: bold 12px verdana, arial, geneva;color:#FFF;
+    text-decoration: none;
+    background-color: #9f9f9f;
+}
+
+ul.bodyIDNav a:hover {
+    background-color: #a5c041;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    position: relative;
+    top:8px;
+    border-top:14px solid #FFF;	/* so it doesnt cause this to "flicker" if ur mouse comes in from above */
+}
+
+ul.bodyIDNav a.selected {
+    background-color: #a5c041;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    position: relative;
+    top:8px;
+}
+
+ul.bodyIDNav a:focus {
+    outline: none;
+}
+
+
+
+/* Misc classes */
+.ChangeBody {cursor:pointer;}
+.AddCompare {cursor:pointer;}
+.AddShopping {cursor:pointer;}
+.numraters{font: bold 11px verdana, arial, geneva;color:#838383;}
+td.cmpBR {border-bottom:1px solid #d2d2d2; border-right:1px solid #d2d2d2;}
+td.cmpB{border-bottom:1px solid #d2d2d2;}
+td.cmpR{border-right:1px solid #d2d2d2;}
+.cmpTXT{font: bold 12px/14px verdana, arial, geneva; float:right;}
+.cmpPrice{font: bold 16px/14px verdana, arial, geneva; float:right;}
+td.listB{font: bold 12px verdana, arial, geneva;color:#666666;}
+td.listHead{font: bold 12px verdana, arial, geneva;color:#FFFFFF;}
+
+.slpDel{float:right;margin-top:5px;}	/* slp = Shopping List panel */
+.slpItem{border-bottom:1px solid #d6d6d6; padding:4px;}
+
+.headTxt{cursor:pointer;font: bold 12px verdana, arial, geneva;color:#FFF;background:#a1a1a1;margin-top:6px;padding:4px;}
+
+.itemSummary{margin-left:10px;}	/* cant just do float:right cuz ie's screw it up...so have to put inside a table */
+
+.bodyComp{font: bold 9px verdana, arial, geneva;color:#5b5b5b;text-decoration: underline;margin-top:3px;margin-bottom:3px;}
+
+
+
+
+/* -------CAT LIST ACCORDION STYLES-----------*/
+/*CANT USE THIS LIKE IT IS CUZ IT OVERRIDES THE UL AND LI WHICH ARE USED ALL OVER THE PLACE...BUT THIS GIVES AN IDEA OF MODS AND SUCH WE CAN DO TO THE LEVELS AND HOW TO DO THEM MAYBE */
+		/* Some list and link styling */
+/*		ul li { width: 200px; background: #000000;margin-left: -20px;}
+		ul ul li { border-left: 2px solid #ff0000; padding: 0; width: 175px; background: #00ff00; }
+		ul ul li a { display:block; color: #00ff00; padding: 0; font-size: small; background: #000ff0; }
+		ul ul li a:hover { display:block; color: #ffff00; background: #0000ff; padding: 0; font-size: small; }*/
+		/* For the xtra menu */
+/*		ul ul ul li { border-left: none; border-bottom: 1px solid #ff00ff; padding: 0; width: 175px; margin: 0; }
+		ul ul ul li a { display:block; color: #000; padding: 0; font-size: small; }
+		ul ul ul li a:hover { display:block; color: #369; background-color: #00ffff; padding: 0; font-size: small; }*/
+
+/* SOME MODS FOR THE LEVELS AND CLASSES TO CONSIDER...WILL HAVE TO DO INDIVIDUAL MODS FOR EACH LVL */
+.catClass {
+	color:#FFFFFF;
+	font: bold 10px/18px verdana, arial, geneva;
+	cursor:pointer;
+}
+
+		h3.navHead{
+			border:0px;
+			color:#FFFFFF;
+			padding-left:5px;
+		}
+		h3.navHead a { 
+			font: bold 10px/12px verdana, geneva;
+			color:#FFFFFF;
+			text-decoration:none;
+		}
+		h3.navHead a:hover { color: #CCCCCC; }
+		h3.selected a { background: #a5c041; }
+		h3.selected a:hover { color: #CCCCCC; }
+
+		h4.navHead{
+			background:none;
+			border:0px;
+			color:#FFFFFF;
+		}
+		h4.navHead a { 
+			font: bold 10px/12px verdana, geneva;
+			color:#FFFFFF;
+			text-decoration:none;
+		}
+		h4.navHead a:hover { color: #CCCCCC; }
+		h4.selected a { background: #a5c041; }
+		h4.selected a:hover { color: #CCCCCC; }
+
+		h5.navHead{
+			background:none;
+			border:0px;
+			color:#FFFFFF;
+		}
+		h5.navHead a { 
+			font: bold 10px/12px verdana, geneva;
+			color:#FFFFFF;
+			text-decoration:none;
+		}
+		h5.navHead a:hover { color: #CCCCCC; }
+		h5.selected a { background: #a5c041; }
+		h5.selected a:hover { color: #CCCCCC; }
+		
+		/* not used yet - just in case */
+		h6.navHead{
+			background:none;
+			border:0px;
+			color:#FFFFFF;
+		}
+		h6.navHead a { 
+			font: bold 10px/12px verdana, geneva;
+			color:#FFFFFF;
+			text-decoration:none;
+		}
+		h6.navHead a:hover { color: #CCCCCC; }
+		h6.selected a { background: #a5c041; }
+		h6.selected a:hover { color: #CCCCCC; }

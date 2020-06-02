@@ -1,0 +1,587 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.master.cs"
+    Inherits="WebTransport.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="Styles/login-box.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/admin.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Controlpanel.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/menu.css" rel="stylesheet" type="text/css" />
+    <link href="themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/jquery.timeentry.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/jquery.tooltip.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/glowInput.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/style1.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/style.css" rel="stylesheet" type="text/css" />
+    <!----New design css and js end------------------->
+    <style type="text/css">
+        .footer
+        {
+            /*background-color: #cdcdcd;*/
+            background-image: url(/images/indicator.gif);
+            height: 15px;
+            text-align: center;
+            font-size: 10px; /*color: #CC0000;*/
+            color: #fff;
+            font-family: Verdana;
+            padding-top: 10px;
+            width: 100%;
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+        }
+        #slidenav
+        {
+            margin: 0 auto;
+            width: 100%;
+            background-color: #298A08;
+            height: 60px; /*padding:20px 50px;*/
+            z-index: 9999px;
+            border: bold 1px #000;
+            position: fixed;
+            display: none;
+            text-align: center;
+            top: 0px;
+        }
+        #slidenavErr
+        {
+            margin: 0 auto;
+            width: 100%;
+            background-color: #FC9191;
+            height: 60px; /*padding:20px 50px;*/
+            z-index: 9999px;
+            border: bold 1px #000;
+            position: fixed;
+            display: none;
+            text-align: center;
+            top: 0px;
+        }
+        .divProg
+        {
+            position: fixed;
+            left: 45%;
+            top: 0px;
+            width: 200px;
+            height: 25px;
+            z-index: 10;
+            border: 1px none #000000;
+            visibility: hidden;
+            background-color: #FFF1A8;
+            font-weight: bold;
+            padding: 5px 10px 5px 10px;
+        }
+    </style>
+    <style type="text/css">
+        .footer1
+        {
+            background-color: #cdcdcd;
+            height: 21px;
+            text-align: center;
+            font-size: 12px;
+            color: #CC0000;
+            font-family: Verdana;
+            padding-top: 10px;
+            width: 100%;
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+        }
+        .footerpowered
+        {
+            background-color: #cdcdcd;
+            height: 21px;
+            text-align: left;
+            font-size: 9px;
+            color: #CC0000;
+            font-family: Verdana;
+            padding-top: 0px;
+            position: fixed;
+            bottom: 7px;
+        }
+        .newsticker
+        {
+            list-style-type: none;
+            border: 0px dashed #fff;
+            background: #cdcdcd;
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+    </style>
+    <!--[if lte IE 6]>
+    <style type="text/css">
+    * html .footer {position:absolute;}
+    </style>
+    <![endif]-->
+    <style type="text/css">
+        #ProgressBar
+        {
+            border-top: solid 0px #ccc;
+            border-left: solid 0px #ccc;
+            border-right: outset 0px #ccc;
+            border-bottom: outset 0px #ccc;
+            background-color: #A4A4A4;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            top: 0%;
+            visibility: hidden;
+            opacity: 0.9;
+            filter: alpha(opacity=90);
+            -moz-opacity: 0.9;
+            z-index: 9999;
+        }
+        
+        /* center <div> for IE*/
+        #ProgressBar
+        {
+            width: 100%;
+            height: 600px;
+            margin: auto;
+        }
+        
+        /* position div for browsers that have a clue*/
+        #ProgressBar, [nul]
+        {
+            left: 0%;
+            margin: 0;
+            margin-left: 0px;
+            position: fixed;
+        }
+    </style>
+    <script src="../Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.ui.core.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.ui.accordion.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.ui.datepicker.js" type="text/javascript"></script>
+    <script src="Scripts/inputValidation.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-ui.min1.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.timeentry.js" type="text/javascript"></script>
+    <link href="../Styles/jquery.timeentry.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="body" onscroll="setDivTop()" runat="server">
+    <div class="divProg" id="divProg">
+    </div>
+    <div id="ProgressBar">
+        <div style="position: absolute; text-align: center; top: 40%; left: 40%; margin: auto;"
+            class="black14">
+            Working Please wait....
+            <img src="Images/loader2.jpg" alt="" />
+        </div>
+    </div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ScriptManager ID="smanager" runat="server">
+        </asp:ScriptManager>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="main_table ">
+            <tr>
+                <td align="left" style="padding-bottom: 0px;">
+                    <div id="slidenav">
+                        <div style="padding-left: 20px; color: #fff; padding-top: 10px; font-size: larger;"
+                            class="black14" id="divinner">
+                        </div>
+                        <div style="padding-top: 40px; float: right; padding-right: 20px;">
+                            <%--<img src="Images/arrow_up_green.png" alt="Close" />--%></div>
+                    </div>
+                    <div id="slidenavErr">
+                        <div style="padding-left: 20px; color: #fff; padding-top: 10px; font-size: larger;"
+                            class="black14" id="divinnerErr">
+                        </div>
+                        <div style="padding-top: 40px; float: right; padding-right: 20px;">
+                            <%--<img src="Images/arrow_up_green.png" alt="Close" />--%></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" class="header_bg1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="53" align="left" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td width="254" align="left" valign="top">
+                                            &nbsp;
+                                        </td>
+                                        <td align="left" valign="top">
+                                            &nbsp;
+                                        </td>
+                                        <td width="565" align="right" valign="top">
+                                            <table width="550" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td colspan="4" align="left" valign="top">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left" valign="middle" width="15">
+                                                    </td>
+                                                    <td align="right" valign="middle">
+                                                        <div style="padding-top: 14px;">
+                                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td class="white11">
+                                                                        Logged in as
+                                                                        <%=strUserName%>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src="images/line.gif" alt="" />
+                                                                    </td>
+                                                                    <td class="white11">
+                                                                        <div id="dvtime">
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <img src="images/line.gif" alt="" />
+                                                                    </td>
+                                                                    <td class="white11">
+                                                                        <asp:LinkButton ID="lnklogout" CssClass="yellow_link" CausesValidation="false" runat="server"
+                                                                            Style="color: White;" OnClick="lnklogout_Click">Logout</asp:LinkButton>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td align="left" valign="middle">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td align="left" valign="top">
+                                            <!-- Main Menu -->
+                                            <ul id="nav" class="dropdown dropdown-horizontal">
+                                                <asp:Literal ID="litmenus" runat="server"></asp:Literal>
+                                                <li id="masters" runat="server" class='dir' style='background-image: none;'>Master
+                                                    <ul>
+                                                        <li title='Masters of Item'>Item
+                                                            <ul>
+                                                                <a href='ItemMaster.aspx'> <li title='Item Master'>Item Master</li></a> 
+                                                                <a href='ItmGrpMaster.aspx'> <li title='Item Group Master'>Item Group Master</li></a>
+                                                                <a href='UOMMaster.aspx'> <li title='UOM Master'>UOM Master</li></a> 
+                                                            </ul>
+                                                        </li>
+                                                        <li title='Rate Master'>Rate
+                                                            <ul>
+                                                                <a href='RateMaster.aspx?FTyp=IR'> <li title='Rate Master'>Rate Master</li></a>
+                                                                <a href='RateMaster.aspx?FTyp=TBB'> <li title='To Be Billed Master'>TBB Master</li></a>
+                                                                <a href='RateMaster.aspx?FTyp=IK'> <li title='Item Katt Master'>Item Katt Master</li> </a>
+                                                            </ul>
+                                                        </li>
+                                                        <li title='Masters of Account'>Account
+                                                            <ul>
+                                                                <a href='LedgerMaster.aspx'> <li title='Ledger Master'>Ledger Master</li></a>
+                                                                <a href='FrmAcntLink.aspx'> <li title='Account Link'>Account Link</li></a>
+                                                                <a href='AcntHeadMaintenace.aspx'> <li title='Account Group Master'>Account Group</li> </a>
+                                                                <a href='AcntSubGrpMaster.aspx'> <li title='Account Sub-Group'>Account Sub-Group</li></a>
+                                                            </ul>
+                                                        </li>
+                                                        <li title='Masters of Employee'>Employee
+                                                            <ul>
+                                                                <a href="EmployeeMaster.aspx"> <li title='Employee Master'>Employee Master</li></a>
+                                                                <a href="DesignationMaster.aspx"> <li title='Designation Master'>Designation Master</li></a>
+                                                                <a href="DesigRights.aspx"> <li title='Designation Rights'>Designation Rights</li></a>
+                                                            </ul>
+                                                        </li>
+                                                        <li title='Others'>Others
+                                                            <ul>
+                                                                <a href='CityMaster.aspx'> <li title='City Master'>City Master</li></a>
+                                                                <a href='PetrolCompanyMaster.aspx'> <li title='City Master'>Petrol Company Master</li></a>
+                                                                <a href='PetrolPumpMaster.aspx'> <li title='City Master'>Petrol Pump Master</li></a>
+                                                                <a href='LorryMaster.aspx'> <li title='Lorry Master'>Lorry Master</li></a>
+                                                                <a href='DriverMaster.aspx'> <li title='Driver Master'>Driver Master</li></a> 
+                                                                <a href='TitleMaster.aspx'> <li title='Title Master '>Title Master</li> </a>
+                                                                <a href='NarrationMast.aspx'> <li title='Narration Master'>Narration Master</li> </a>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li id="Li1" runat="server" class='dir' style='background-image: none;'>Booking
+                                                    <ul>
+                                                        <a href='RcptGoodsReceived.aspx'> <li title='Receipt of Goods'>Receipt of Goods</li></a> 
+                                                        <a href='Quotation.aspx'> <li title='Quotation'>Quotation</li></a> 
+                                                        <a href='GRPrep.aspx'> <li title='GR Preparation'>GR Preparation</li></a> 
+                                                        <li title='Challan Preparation'>Challan Preparation
+                                                            <ul>
+                                                                <a href="ChlnBooking.aspx"> <li title='Challan Booking'>Challan Booking</li></a>
+                                                                <a href="PaymentReceived.aspx"> <li title='Amount Received against challan'>Amount Received-Challan</li></a>
+                                                            </ul>
+                                                        </li>
+                                                        <a href='Challanconfirmation.aspx'> <li title='Challan Confirmation'>Challan Confirmation</li></a> 
+                                                        <a href='Invoice.aspx'> <li title='Invoice'>Invoice</li></a> 
+                                                    </ul>
+                                                </li>
+                                                <li id="Li3" runat="server" class='dir' style='background-image: none;'>Account
+                                                    <ul>
+                                                        <a href='VchrEntry.aspx'> <li title='Voucher Entry'>Voucher Entry</li></a>
+                                                        <a href='BankReConciliation.aspx'> <li title='Bank ReConciliation'>Bank ReConciliation</li></a>
+                                                    </ul>
+                                                </li>
+                                                <li id="Li2" runat="server" class='dir' style='background-image: none;'>Utility
+                                                    <ul>
+                                                        <a href='ChangePassword.aspx'> <li title='Reset Password'>Reset Password</li></a>
+                                                        <a href='UserPreference.aspx'> <li title='User Preference'>User Preference</li></a>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <!-- Main Menu -->
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" style="color: #EBEBEB;">
+                    <div>
+                        <asp:ContentPlaceHolder ID="contentmaster" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <!--birthday,anivarsary and joining start-->
+        <div id="dvDOBDOA" runat="server" style="position: fixed; bottom: 0; right: 0px;
+            display: none; width: 175px; z-index: 9999; min-height: 150px; height: auto;
+            background-color: #D3D3D3; float: right;" class="border1 black12link">
+            <div class="fl" style="background-color: #fff; width: 100%">
+                <div style="width: 70%; text-align: left; background-color: #fff;" class="fl black11">
+                    <asp:Label ID="lblindiandatetime" runat="server"></asp:Label>
+                </div>
+                <div class="fr" style="background-color: #fff;">
+                    <img src="images/close.jpg" alt="Close" style="border: 0px; cursor: pointer; margin-left: 10px;"
+                        onclick="HideDOBDOA()" /></div>
+            </div>
+            <div id="divBirthday" runat="server">
+                <div class="fl web_dialog_title" style="width: 100%">
+                    <asp:Label ID="lblbirthday" runat="server" ForeColor="White"></asp:Label>
+                </div>
+                &nbsp;
+                <div class="fl" style="min-height: 50px; height: auto;">
+                    <asp:Repeater ID="rptdob" runat="server">
+                        <ItemTemplate>
+                            <div style="width: 100px;" class="black11">
+                                <%#Eval("user_name") %></div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+            &nbsp;
+            <div id="divAnivarsary" runat="server">
+                <div class="fl  web_dialog_title" style="width: 100%">
+                    <asp:Label ID="lblaniversary" runat="server" ForeColor="White"></asp:Label></div>
+                &nbsp;
+                <div class="fl" style="min-height: 50px; height: auto;">
+                    <asp:Repeater ID="rptdoa" runat="server">
+                        <ItemTemplate>
+                            <div style="width: 100px;" class="black11">
+                                <%#Eval("user_name") %></div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+            &nbsp;
+            <div id="divCompletionYearmyd" runat="server">
+                <div class="fl  web_dialog_title" style="width: 100%">
+                    <asp:Label ID="lblCompletionYearmyd" runat="server" ForeColor="White"></asp:Label></div>
+                &nbsp;
+                <div class="fl" style="min-height: 50px; height: auto;">
+                    <asp:Repeater ID="rptcymyd" runat="server">
+                        <ItemTemplate>
+                            <div class="black11">
+                                <%#Eval("user_name") %>&nbsp;<%#Eval("Message") %></div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+        </div>
+        <!--birthday,anivarsary and joining end-->
+        <div style="float: left;">
+            <div class="footer1" style="float: left;">
+                <ul id="news">
+                    <asp:Repeater ID="rptnews" runat="server">
+                        <ItemTemplate>
+                            <li>
+                                <%#Eval("news") %></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </ul>
+            </div>
+            <div class="footerpowered" style="float: right;">
+                <span>
+                    <asp:Label ID="lblsitename" runat="server"></asp:Label><%--Mis &copy;<%= DateTime.Today.Year  %>--%>
+                    Best viewed in Mozila FireFox.</span><br />
+                Developed by Mozila FireFox.</span><br />
+                Developed by <a href="http://www.cogxim.com" class="link black11" target="_blank">Cogxim</a>
+            </div>
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            SetFocus();
+        });
+
+        function SetFocus() {
+            $('input[type="text"]').focus(function () {
+                $(this).addClass("focus");
+            });
+            $('input[type="text"]').blur(function () {
+                $(this).removeClass("focus");
+            });
+            $('input[type="password"]').focus(function () {
+                $(this).addClass("focus");
+            });
+            $('input[type="password"]').blur(function () {
+                $(this).removeClass("focus");
+            });
+            $("select").focus(function () {
+                $(this).addClass("focus");
+            });
+            $("select").blur(function () {
+                $(this).removeClass("focus");
+            });
+
+        }
+
+        var refreshIntervalId;
+        var flags = 0;
+        function ShowDivSlide() {
+            $('#slidenav').show("slide", { direction: "up" }, 1500);
+            refreshIntervalId = self.setInterval(function () { HideDivSlide() }, 1000);
+        }
+
+        function ShowDivSlideError() {
+            $('#slidenavErr').show("slide", { direction: "up" }, 1500);
+            refreshIntervalId = self.setInterval(function () { HideDivSlideErr() }, 4000);
+        }
+
+        function HideDivSlide() {
+            $('#slidenav').fadeOut(3000);
+            clearInterval(refreshIntervalId);
+        }
+
+        function HideDivSlideErr() {
+            $('#slidenavErr').fadeOut(4000);
+            clearInterval(refreshIntervalId);
+        }
+
+        function PassMessage(msg) {
+            $('#divinner').html("");
+            $('#divinner').html(msg);
+            ShowDivSlide();
+        }
+        function PassMessageError(msg) {
+            $('#divinnerErr').html("");
+            $('#divinnerErr').html(msg);
+            ShowDivSlideError();
+        }
+
+        ///div start
+        function getScroll_Y() {
+            return document.documentElement.scrollTop;
+        }
+
+        function setDivTop() {
+            if (document.getElementById("divProg") != null) {
+                theDiv = document.getElementById("divProg");
+            }
+            else {
+                return;
+            }
+        }
+
+        function displayDiv(display) {
+            if (document.getElementById("divProg") != null) {
+                theDiv = document.getElementById("divProg");
+                theDivProgressBar = document.getElementById("ProgressBar");
+
+            }
+            else {
+                return;
+            }
+
+            if (display) {
+                var width = document.body.offsetWidth;
+                var height = document.body.offsetHeight;
+                if (!width) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+
+                    if (!width) {
+                        width = screen.width;
+                        height = screen.height;
+                    }
+                }
+                // To center the div, we need to deduct its half of
+                // width from half of screen width. So we set div width =100
+                // in css, so that deduct by 50
+                //theDiv.style.left = width / 2 - 50;
+                theDiv.style.top = getScroll_Y() + "px"; ;
+                //theDiv.style.height = 25;
+                theDiv.innerText = 'Working please wait...';
+                theDiv.textContent = 'Working please wait...';
+                //theDiv.style.visibility = 'visible';
+                theDivProgressBar.style.visibility = 'visible';
+
+            }
+            else {
+                //theDiv.style.visibility = 'hidden';
+                theDivProgressBar.style.visibility = 'hidden';
+            }
+        }
+
+        // Requests Events
+        // ============================================
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+        prm.add_initializeRequest(InitializeRequest);
+        prm.add_endRequest(EndRequest);
+
+        function InitializeRequest(sender, args) {
+            if (prm.get_isInAsyncPostBack()) {
+                args.set_cancel(true);
+            }
+            displayDiv(true);
+        }
+        function EndRequest(sender, args) {
+            if (args.get_error()) {
+                alert(args.get_error().message);
+                args.set_errorHandled(true);
+            }
+            displayDiv(false);
+            SetFocus();
+        }
+        ///div end
+
+        prm.add_beginRequest(function () {
+            SetFocus();
+        });
+            
+      
+    </script>
+    <script language="javascript" type="text/javascript">
+
+        function hidemsg() {
+            $("#dvmsg").fadeOut("slow");
+        }
+        function HideDOBDOA() {
+            $("#<%=dvDOBDOA.ClientID %>").hide(2000);
+        }    
+        
+    </script>
+    </form>
+</body>
+</html>

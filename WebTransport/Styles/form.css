@@ -1,0 +1,138 @@
+/*Form Styles*/
+
+.text {
+	width:180px;
+	height:22px;
+	border:1px solid #CCCCCC;
+	color:#666666;
+	font-size:12px;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+.text1 {
+	width:60px;
+	height:22px;
+	border:1px solid #CCCCCC;
+	color:#666666;
+	font-size:12px;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	
+
+input.text:focus	{
+	border: 1px solid #999999;
+	background-color: #FFFFFF;
+}
+
+textarea.posText:focus	{
+	border: 1px solid #1B2123;
+	background-color: #101415;
+}
+
+fieldset {
+	border:none;
+	}
+	
+#emailSuccess {
+padding-bottom:14px;
+}
+
+#loadBar {
+padding-bottom:14px;
+}
+.posText {
+	width:120px;
+	background-color:#344DC1;
+	color:#FFFFFF;
+	font-size:18px;
+	font-family:Calibri;
+	font-weight: bold;
+	cursor:pointer;
+	text-transform: uppercase;
+	line-height: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: 1px solid #344DC1;
+	}	
+
+.posText:hover{
+	width:120px;
+	background-color:#666666;
+	color:#FFFFFF;
+	font-size:18px;
+	font-family:Calibri;
+	font-weight: bold;
+	cursor:pointer;
+	line-height: 20px;
+	text-transform: uppercase;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: 1px solid #666666;
+	}	
+
+.code_area {
+	width:30px;
+	height:22px;
+	border:1px solid #CCCCCC;
+	color:#666666;
+	font-size:12px;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+.field {
+	width:230px;
+	height:20px;
+	border:1px solid #CCCCCC;
+	color:#CCCCCC;
+	font-size:12px;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	line-height: 20px;
+	}
+	input.field:focus	{
+	border: 1px solid #999999;
+	background-color: #FFFFFF;
+		}
+		
+.field1 {
+	width:60px;
+	height:22px;
+	border:1px solid #CCCCCC;
+	color:#666666;
+	font-size:12px;
+	padding: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+	.posField {
+	width:80px;
+	background-color:#185075;
+	color:#FFFFFF;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	cursor:pointer;
+	text-transform: uppercase;
+	line-height: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: 1px solid #9FAB23;
+	}	
+
+.posField:hover{
+	width:80px;
+	background-color:#999999;
+	color:#FFFFFF;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	cursor:pointer;
+	line-height: 20px;
+	text-transform: uppercase;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border: 1px solid #333333;
+	}

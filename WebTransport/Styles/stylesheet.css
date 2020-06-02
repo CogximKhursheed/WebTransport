@@ -1,0 +1,287 @@
+
+.vast {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	line-height: 20px;		
+}
+.text_contact {
+
+	font-family: Arial;
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+	line-height: 18px;
+	font-weight: normal;
+} 
+.tborder { 
+border : 1px solid #666666;
+}
+.smalltxt {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #0B4877;
+	text-decoration: none;
+	line-height: 18px;
+	font-weight: normal;
+}
+.meta {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 20px;
+	color: #666666;
+}
+.meta a:link {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+	line-height: 20px;
+}
+.meta a:visited {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+	line-height: 20px;
+}
+.meta a:hover {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #FF9900;
+	height: auto;
+	width: auto;
+	line-height: 20px;
+}
+.meta a:active {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+	line-height: 20px;
+}
+.bottom_button {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 20px;
+	color: #666666;
+}
+.bottom_button a:link {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+	line-height: 20px;
+}
+.bottom_button a:visited {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+	line-height: 20px;
+}
+.bottom_button a:hover {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #53809F;
+	height: auto;
+	width: auto;
+	line-height: 20px;
+}
+.bottom_button a:active {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+	line-height: 20px;
+}
+.text {
+	font-family: Tahoma;
+	font-size: 11px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #666666;
+	text-decoration: none;
+}
+.downloads {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #656565;
+	text-decoration: none;
+}
+.downloads a:link {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #656565;
+}
+.downloads a:visited {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #656565;
+}	
+.downloads a:hover {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #F97012;
+}
+.downloads	a:active {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #656565;
+}
+.title {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #666666;
+}
+.contact {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #002657;
+	text-decoration: none;
+}
+.contact_2 {
+	font-family: Tahoma;
+	font-size: 14px;
+	font-weight: bold;
+	color: #002657;
+	text-decoration: none;
+}
+.link {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	color: #666666;
+}
+.link a:link {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+.link a:visited {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+.link a:hover {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #F97012;
+}
+.link a:active {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+.sitemap_bt {
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #05437C;
+	text-decoration: none;
+}
+a:link {
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #05437C;
+	text-decoration: none;
+}
+a:visited {
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #05437C;
+	text-decoration: none;
+}
+a:hover {
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #5D595A;
+	text-decoration: none;
+}
+a:active {
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #05437C;
+	text-decoration: none;
+}
+
+/*---new css 19-05-2012-----*/
+.whitenormal{ font-size:11px; color:#FFFFFF; text-decoration:none; line-height:18px;}
+.clear{ clear:both}
+.float_left{ float:left}
+.float_right{ float:right}
+.top_right{ width:330px; }
+.top_right2{ width:400px; }
+
+.padding_9px{ padding:9px;}
+.padding_5px{ padding:5px;}
+.padding_top4px{ padding-top:4px;}
+.padding_top7px{ padding-top:7px;}
+.padding_top10px{ padding-top:10px;}
+.padding_right5px{ padding-right:5px;}
+.padding_right8px{ padding-right:8px;}
+.padding_right24px{ padding-right:24px;}
+.padding_right23px{ padding-right:23px;}
+.padding_right10px{ padding-right:10px;}
+.padding_right30px{ padding-right:30px;}
+
+.padding_left2px{ padding-left:2px;}
+.padding_left5px{ padding-left:5px;}
+.padding_left7px{ padding-left:7px;}
+.padding_left10px{ padding-left:10px}
+.padding_left15px{ padding-left:15px;}
+.padding_left20px{ padding-left:20px;}
+.padding_left27px{ padding-left:27px;}
+.padding_left41px{ padding-left:41px;}
+.padding_left12px{ padding-left:12px;}
+.combo_pannel{ width:132px; padding-top:4px;}
+.combo{ width:128px; height:16px; color:#000000; font-size:11px; border:1px solid #FFFFFF}
+.darkpinkcolor{ background-color:#631947}
+.redtext{font-family: Verdana; font-size:8pt; font-weight:normal;color:Red}
+.textboxes {
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: normal;
+	color: #002657;
+	text-decoration: none;
+}

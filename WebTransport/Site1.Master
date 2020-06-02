@@ -1,0 +1,465 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebTransport.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8">
+    <title>Transport Management Software</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min-3.3.css">
+    <link rel="stylesheet" href="css/plugins-3.4.css">
+    <link rel="stylesheet" href="css/main-3.3.css">
+    <link rel="stylesheet" href="css/themes-3.1.css">
+    <link rel="stylesheet" href="js/datatables/datatables.css" type="text/css" />
+    <link rel="stylesheet" href="js/datatables/jquery.dataTables.min.css" type="text/css" />
+    <link rel="stylesheet" href="js/jquery-ui.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/chosen.css">
+    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/chosen.css">
+    <script src="Scripts/chosen.jquery.js" type="text/javascript"></script>
+    <script src="js/vendor/modernizr-respond.min.js"></script>
+    <style type="text/css">
+        /*INPUT FEILD TIP*/
+        .validation-tip 
+        {
+            display:none;
+            color: #ea5252;
+            font-size: 12px;
+            position: absolute;
+            bottom: 34px;
+            background: white;
+            border: 1px solid #7a7a7a;
+            padding: 7px;
+            line-height: 12px;
+            border-radius: 3px;
+            box-shadow: 0px -2px 4px gray;
+            font-weight: bold;
+        }
+        .validation-tip::before {
+            content: "";
+            border-top: 6px solid #7a7a7a;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            position: absolute;
+            bottom: -6px;
+            left: 10%;
+        }
+        /*COMMON*/
+        .center-block
+        {
+            display:block;
+            margin:auto;
+            float:none;
+        }
+        /*SETTINGS POPUP FOR USER PREFERENCE */
+        .pop-up .img-setting
+        {
+            width: 25px;
+            height: 25px;
+            background-image: url('Images/setting2.png');
+            display: inline-block;
+            background-size: 100%;
+            position: absolute;
+            background-color: white;
+            border-radius: 4px;
+        }
+        .btn-setting:hover
+        {
+            transform: rotate(180deg);
+            transition: all cubic-bezier(1,-0.22,0,1.59) .5s;
+        }
+        .pop-up span
+        {
+            padding-left:30px;
+        }
+        .pop-up i.fa.fa-times
+        {
+            float:right;
+            cursor:pointer;
+        }
+        .pop-up i.fa.fa-times:hover
+        {
+            color:Red;
+        }
+        .modal-content {
+            border-radius: 5px;
+        }
+        .alternate-rows > div:nth-child(2n)
+        {
+            background:#e4f3ff;
+        }
+        .pop-up-parent
+        {
+            display:none;
+            height: 100%;
+            width: 100%;
+            background: #00000080;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .pop-up
+        {
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .pop-up-button
+        {
+            width:100px;
+        }
+        .pop-up hr
+        {
+            margin:5px 0;
+        }
+        .btn-setting
+        {
+            float:right;
+            cursor:pointer;
+            width:30px;
+            height:30px;
+            background-image:url('Images/setting2.png');
+            background-size:100%;
+        }
+        
+        /*DEFAULT*/
+        #slidenav
+        {
+            margin: 0 auto;
+            width: 100%;
+            background-color: #298A08;
+            height: 60px; /*padding:20px 50px;*/
+            z-index: 9999px;
+            border: bold 1px #000;
+            position: fixed;
+            display: none;
+            text-align: center;
+            top: 0px;
+        }
+        #slidenavErr
+        {
+            margin: 0 auto;
+            width: 100%;
+            background-color: #FC9191;
+            height: 60px; /*padding:20px 50px;*/
+            z-index: 9999px;
+            border: bold 1px #000;
+            position: fixed;
+            display: none;
+            text-align: center;
+            top: 0px;
+        }
+        .divProg
+        {
+            position: fixed;
+            left: 45%;
+            top: 0px;
+            width: 200px;
+            height: 25px;
+            z-index: 10;
+            border: 1px none #000000;
+            visibility: hidden;
+            background-color: #FFF1A8;
+            font-weight: bold;
+            padding: 5px 10px 5px 10px;
+        }
+        
+        #ProgressBar
+        {
+            border-top: solid 0px #ccc;
+            border-left: solid 0px #ccc;
+            border-right: outset 0px #ccc;
+            border-bottom: outset 0px #ccc;
+            background-color: #A4A4A4;
+            text-align: center;
+            vertical-align: middle;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            top: 0%;
+            visibility: hidden;
+            opacity: 0.9;
+            filter: alpha(opacity=90);
+            -moz-opacity: 0.9;
+            z-index: 9999;
+        }
+        
+        /* center <div> for IE*/
+        #ProgressBar
+        {
+            width: 100%;
+            height: 600px;
+            margin: auto;
+        }
+        
+        /* position div for browsers that have a clue*/
+        #ProgressBar, [nul]
+        {
+            left: 0%;
+            margin: 0;
+            margin-left: 0px;
+            position: fixed;
+        }
+    </style>
+    <script src="Scripts/inputValidation.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+ <!--LOADING-QUICK-MESSAGE-->
+    <div class="loading-message">
+        <div class="loading-message-box">
+            <div class="flex-box">
+                <div class="loading-message-img">
+                    <div class="spinner success">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <div class="bar4"></div>
+                        <div class="bar5"></div>
+                        <div class="bar6"></div>
+                        <div class="bar7"></div>
+                        <div class="bar8"></div>
+                        <div class="bar9"></div>
+                        <div class="bar10"></div>
+                        <div class="bar11"></div>
+                        <div class="bar12"></div>
+                    </div>
+                </div>
+                <div class="loading-message-info">Item added</div>
+            </div>
+        </div>
+    </div>
+    <div class="divProg" id="divProg">
+    </div>
+    <div id="ProgressBar">
+        <div style="position: absolute; text-align: center; top: 40%; left: 40%; margin: auto;"
+            class="black14">
+            Working Please wait....
+            <img src="Images/loader2.jpg" alt="" />
+        </div>
+    </div>
+    <form id="form1" runat="server">
+    <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </ajaxToolkit:ToolkitScriptManager>
+    <div id="page-wrapper">
+        <div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations" style="background-image: url(https://cdn.hipwallpaper.com/i/93/90/Hk4lR6.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: 43%;">
+            <asp:LeftControl ID="leftCotrol" runat="server" />
+            <div id="main-container">
+                <asp:HeaderControl ID="headerControl" runat="server" />
+                  <div id="divMessagePopMsg" runat="server" style="background-color: #65c9bf; color:#ff0000; font-weight: bold;  height: 45px; padding-top: 10px; text-align: center;" visible="false">
+                
+              </div>
+                <div id="slidenav" style="height: 50px;">
+                    <div style="padding-left: 0px; padding-right: 170px; color: #fff; padding-top: 10px;
+                        font-size: larger;" class="black14" id="divinner">
+                    </div>
+                    <div style="padding-top: 40px; float: right; padding-right: 20px;">
+                    </div>
+                </div>
+                <div id="slidenavErr" style="height: 50px;">
+                    <div style="padding-left: 0px; padding-right: 170px; color: #fff; padding-top: 10px;
+                        font-size: larger;" class="black14" id="divinnerErr">
+                    </div>
+                    <div style="padding-top: 40px; float: right; padding-right: 20px;">
+                    </div>
+                </div>
+                <div id="page-content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <footer class="clearfix">
+					<div class="pull-right">
+						Created by <a href="http://cogxim.com/" target="_blank">Cogxim.com</a>
+					</div>
+					<div class="pull-left">
+						<span>2016 &copy; </span><a href="#" target="_self">Cogxim</a>
+					</div>
+				</footer>
+            </div>
+        </div>
+    </div>
+    <script src="js/vendor/jquery-1.12.0.min.js" type="text/javascript"></script>
+    <script src="js/vendor/bootstrap.min-3.3.js" type="text/javascript"></script>
+    <script src="js/plugins-3.4.js" type="text/javascript"></script>
+    <script src="js/app-3.3.js" type="text/javascript"></script>
+    <script src="js/pages/index.js" type="text/javascript"></script>
+    <script src="js/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.js" type="text/javascript"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+    <script>        (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga'); ga('create', 'UA-16158021-6', 'auto'); ga('send', 'pageview');</script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            SetFocus();
+        });
+
+        function SetFocus() {
+            $('input[type="text"]').focus(function () {
+                $(this).addClass("focus");
+            });
+            $('input[type="text"]').blur(function () {
+                $(this).removeClass("focus");
+            });
+            $('input[type="password"]').focus(function () {
+                $(this).addClass("focus");
+            });
+            $('input[type="password"]').blur(function () {
+                $(this).removeClass("focus");
+            });
+            $("select").focus(function () {
+                $(this).addClass("focus");
+            });
+            $("select").blur(function () {
+                $(this).removeClass("focus");
+            });
+
+        }
+
+        var refreshIntervalId;
+        var flags = 0;
+        function ShowDivSlide() {
+            $('#slidenav').show("slide", { direction: "up" }, 1500);
+            refreshIntervalId = self.setInterval(function () { HideDivSlide() }, 1000);
+        }
+
+        function ShowDivSlideError() {
+            $('#slidenavErr').show("slide", { direction: "up" }, 1500);
+            refreshIntervalId = self.setInterval(function () { HideDivSlideErr() }, 4000);
+        }
+
+        function HideDivSlide() {
+            $('#slidenav').fadeOut(3000);
+            clearInterval(refreshIntervalId);
+        }
+
+        function HideDivSlideErr() {
+            $('#slidenavErr').fadeOut(4000);
+            clearInterval(refreshIntervalId);
+        }
+
+        function PassMessage(msg) {
+            $('#divinner').html("");
+            $('#divinner').html(msg);
+            ShowDivSlide();
+        }
+        function PassMessageError(msg) {
+            $('#divinnerErr').html("");
+            $('#divinnerErr').html(msg);
+            ShowDivSlideError();
+        }
+        ///div start
+        function getScroll_Y() {
+            return document.documentElement.scrollTop;
+        }
+
+        function setDivTop() {
+            if (document.getElementById("divProg") != null) {
+                theDiv = document.getElementById("divProg");
+            }
+            else {
+                return;
+            }
+        }
+        function displayDiv(display) {
+            if (document.getElementById("divProg") != null) {
+                theDiv = document.getElementById("divProg");
+                theDivProgressBar = document.getElementById("ProgressBar");
+
+            }
+            else {
+                return;
+            }
+            if (display) {
+                var width = document.body.offsetWidth;
+                var height = document.body.offsetHeight;
+                if (!width) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+
+                    if (!width) {
+                        width = screen.width;
+                        height = screen.height;
+                    }
+                }
+                // To center the div, we need to deduct its half of
+                // width from half of screen width. So we set div width =100
+                // in css, so that deduct by 50
+                //theDiv.style.left = width / 2 - 50;
+                theDiv.style.top = getScroll_Y() + "px"; ;
+                //theDiv.style.height = 25;
+                theDiv.innerText = 'Working please wait...';
+                theDiv.textContent = 'Working please wait...';
+                //theDiv.style.visibility = 'visible';
+                theDivProgressBar.style.visibility = 'visible';
+            }
+            else {
+                //theDiv.style.visibility = 'hidden';
+                theDivProgressBar.style.visibility = 'hidden';
+            }
+        }
+        // Requests Events
+        // ============================================
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+        prm.add_initializeRequest(InitializeRequest);
+        prm.add_endRequest(EndRequest);
+
+        function InitializeRequest(sender, args) {
+            if (prm.get_isInAsyncPostBack()) {
+                args.set_cancel(true);
+            }
+            displayDiv(true);
+        }
+        function EndRequest(sender, args) {
+            if (args.get_error()) {
+                alert(args.get_error().message);
+                args.set_errorHandled(true);
+            }
+            displayDiv(false);
+            SetFocus();
+        }
+        ///div end
+        prm.add_beginRequest(function () {
+            SetFocus();
+        });
+        /*SETTING POPUP FOR USER PREFERENCE*/
+        $('.btn-setting').click(function () {
+            $(this).effect("bounce", { times: 3 }, 500);
+            $('#PopUpSetting').fadeIn(300);
+            $('#PopUpSetting').parent('div').fadeIn(100);
+        });
+        $('.pop-up i.fa.fa-times').click(function () {
+            $('#PopUpSetting').fadeOut(300);
+            $('#PopUpSetting').parent('div').fadeOut(100);
+        });
+        $('.btn-info').click(function () {
+            $('#infobox').fadeIn(300);
+            $('#infobox').parent('div').fadeIn(100);
+        });
+        $('.pop-up i.fa.fa-times').click(function () {
+            $('#infobox').fadeOut(300);
+            $('#infobox').parent('div').fadeOut(100);
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="FooterScriptPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            App.setMainPage(true);
+            App.init();
+        });
+    </script>
+    </form>
+</body>
+</html>

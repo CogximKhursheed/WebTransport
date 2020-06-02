@@ -1,0 +1,289 @@
+/* CSS Document */
+.body {
+	margin-left:0px;
+	margin-top:0px;
+	margin-right:0px;
+	margin-bottom:0px;}
+.left {text-align:left}	
+.okMessage{color:Green;font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt;}
+.headerbg {background-image: url(../webadmin/images/bgheader.jpg); background-repeat:repeat-y;}
+.leftpanel-help {background-image: url(../webadmin/images/leftpanel-help.gif); background-repeat:repeat-x;}
+.subtable-bg {background-image: url(../webadmin/images/panels-bg.gif); background-repeat:repeat-x;}
+.pagingstyle {background-image: url(../webadmin/images/paging_bg.gif); background-repeat:repeat-x;}
+.inner-bg {background-image: url(../webadmin/images/innerbg.gif); height:26px; background-repeat:repeat-x;}
+.bluetext{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; color:#000000;}
+.whitetoptext{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; color:#ffffff;}
+.normaltext{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; color:#000000;}
+.blueboldtext{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; color:#D71F27; font-weight:bold;}
+.subheadtext{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:9pt; color:#000000; font-weight:bold;}
+.link{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; color:#909090;}
+.linkOrg{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:8pt; color:#FF7F2A;}
+.heading{ font-family: Arial, Helvetica, sans-serif; font-size:12pt; color:#D71F27; font-weight:bold;}
+.yellow-border{ border:solid 1px #D98C00;}
+.black-border{ border:solid 1px #000000;}
+.grey-border{ border:solid 0px #000000;}
+.detailtable{border-bottom:#d3d2d8; border-top:#d3d2d8; border-left:#d3d2d8;}
+/*.grey-border{ border:solid 1px #f4f4f4;}*/
+.subtable-border{ border:solid 1px #000000;}
+.redtext{font-family: Verdana; font-size:8pt; font-weight:bold;color:Red}
+.bgleft{
+background-color:#f4f4f4;margin-left:0px;
+	margin-top:0px;
+	margin-right:0px;
+	margin-bottom:0px;
+}
+/* Inset 3D Curved */
+.inset {background: transparent; width:50px; margin:0 auto;}
+.inset h1, .inset p {margin:0 10px;}
+.inset h1 {font-size:2em; color:#fff; letter-spacing:1px;}
+.inset p {padding-bottom:0.5em;}
+
+.inset .top, .inset .bottom {display:block; background:transparent; font-size:1px;}
+.inset .b1, .inset .b2, .inset .b3, .inset .b4, .inset .b1b, .inset .b2b, .inset .b3b, .inset .b4b {display:block; overflow:hidden;}
+.inset .b1, .inset .b2, .inset .b3, .inset .b1b, .inset .b2b, .inset .b3b {height:1px;}
+.inset .b2 {background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+.inset .b3 {background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+.inset .b4 {background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+.inset .b4b {background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+.inset .b3b {background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+.inset .b2b {background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+
+
+.inset .b1 {margin:0 5px; background:#999;}
+.inset .b2, .inset .b2b {margin:0 3px; border-width:0 2px;}
+.inset .b3, .inset .b3b {margin:0 2px;}
+.inset .b4, .inset .b4b {height:2px; margin:0 1px;}
+.inset .b1b {margin:0 5px; background:#FFDA99;}
+
+.inset .boxcontent {display:block; background:#FCAF23; border-left:1px solid #ccc; border-right:1px solid #ccc;
+}
+.text
+{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:15px;
+font-weight:bold;
+color:#000000;
+}
+.btnbg
+{
+background-image:url(images/btnbg.jpg);
+height:38px;
+}
+.bluetextbig{ 
+font-family:Verdana, Arial, Helvetica, sans-serif; 
+font-size:11px;
+font-weight:bold;
+color:#000000;
+}
+.bgcolor
+{
+background-color:#F3F3F3;
+height:16px;
+}
+.bgcolorgridview
+{
+	background-color:#E8F2FD;
+	height:16px;
+}
+.bgcolorrow
+{
+background-color:#FFFF55;
+height:16px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:9pt;
+}
+
+.bgcolorrowpink
+{
+background-color:#F3C9F3;
+height:16px;
+font-family:Arial, Helvetica, sans-serif;
+color:Black;
+font-size:9pt;
+}
+
+.bgcolorrowgreen
+{
+background-color:#D4FFD4;
+height:16px;
+font-family:Arial, Helvetica, sans-serif;
+color:Black;
+font-size:9pt;
+}
+
+.tbltext
+{
+margin-left:15px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+margin-right:25px;
+color:#000000;
+font-weight:bold;
+text-align:right;
+}
+.tbltext1
+{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+margin-right:25px;
+color:#000000;
+font-weight:bold;
+text-align:right;
+}
+input.nb{ 
+font-variant:small-caps; 
+color:#369; 
+background:#fff; 
+border:1;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+} 
+textarea.nbb
+{font-variant:small-caps; 
+color:#369; 
+background:#fff; 
+border:1;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+select.nbbb
+{font-variant:small-caps; 
+color:#369; 
+background:#fff; 
+border:1;
+color:#000000;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+}
+
+.cssnav
+{
+font-family: arial, helvetica, sans-serif;
+background-color:#dddddd;
+font-size:12px;
+/*white-space: nowrap;*/
+margin: 0;
+padding: 0;
+}
+
+.cssnav a
+{
+display: list-item;
+color: #000000;
+font-size: 11px;
+width: 75px;
+height: 25px;
+display:list-item;
+float: left;
+color: #ffffff;
+text-decoration: none;
+}
+a.link:link{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:none;
+color:#909090;
+}
+a.link:hover{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:underline;
+color:#000000;
+}
+a.link:visited{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:none;
+color:#000000;
+}
+a.link:active{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:none;
+color:#000000;
+}
+
+leftpanel-help.gif
+
+.style1 {color: #909090}
+
+
+/**********************************************************
+/* Thse lines of Cssare added by rajesh 20 oct */
+
+
+a.link:link{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:none;
+color:#909090;
+}
+a.link:hover{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:underline;
+color:#000000;
+}
+a.link:visited{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:none;
+color:#000000;
+}
+a.link:active{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8pt;
+text-decoration:none;
+color:#000000;
+}
+
+.modalBackground {
+	background-color:Gray;	
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	width:400px;
+	height:420px;
+}
+
+.modalPopup {
+	background-color:#f4f4f4;
+	border-width:3px;
+	border-style:solid;
+	border-color:Gray;
+	padding:3px;
+	width:650px;
+	height:400px;
+}
+
+.popupControl{
+	background-color:White;
+	position:absolute;
+	visibility:hidden;
+	width:400px;
+	height:420px;
+}
+
+.bordertbl
+{
+	border:1px solid #d3d2d8;
+	border-collapse:collapse;
+}
+
+.inputbox
+{
+	font-family:Verdana;
+	font-size:11px;
+}
+
+/*.navtitle
+{
+	font-weight: bold;
+	color: #ffffff;
+	background: #596a8d url("../../cpstyles/vBulletin_3_Silver/cp_tblhead_bg.gif") repeat-x;
+	border: solid 2px #666688; 
+	padding: 3px;
+	margin-top: 3px;
+	cursor: default;
+}*/
+
+/**********************************************************/
